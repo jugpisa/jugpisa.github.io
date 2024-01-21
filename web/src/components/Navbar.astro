@@ -1,0 +1,21 @@
+---
+import Donate from "./Donate.astro"
+import DesktopMenu from "./DesktopMenu.astro"
+import MobileMenu from "./MobileMenu.astro"
+---
+
+<nav class="bg-slate-100">
+    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div class="relative flex h-16 items-center justify-between">
+            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                <DesktopMenu />
+                <!-- Mobile menu, show/hide based on menu state. -->
+                <MobileMenu />
+            </div>
+            <div>
+                <Donate />
+            </div>
+        </div>
+    </div>
+  </nav>
+  

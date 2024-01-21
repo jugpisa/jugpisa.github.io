@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import HelloJUG from '../components/HelloJUG.astro';
+import Sponsor from '../components/Sponsor.astro';
+---
+
+<Layout title="JUG (JVM User Group) - Pisa">
+	<main>
+		<div class="flex-col sm:flex-row flex flex-shrink-0 justify-center ">
+			<img class="h-auto w-auto" src="/Logo_C2.svg" alt="JVM User Group Pisa">
+			<div class="hidden code sm:self-center sm:block">
+				<HelloJUG/>
+			</div>
+		</div>
+		<div class="text-2xl flex justify-center mb-8 mt-10 raleway">I Nostri Sponsor</div>
+		<div class="hidden sm:flex justify-center">
+			<Sponsor />
+		</div>
+	</main>
+</Layout>
+<style>
+	.code{
+		font-family: 'Source Code Pro', monospace;
+	}
+</style>
