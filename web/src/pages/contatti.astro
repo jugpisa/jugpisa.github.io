@@ -6,7 +6,20 @@ import ContactForm from "../components/ContactForm"
 <Layout title="JUG (JVM User Group) - Pisa">
 	<main>
 		<div class="flex-col sm:flex-row flex flex-shrink-0 justify-center ">
-			<ContactForm client:only redirectURL={"/thank-you"}/>
+			<div class="flex">
+				<div class="w-1/2">
+					<img src="/assets/Contact_Placeholder.png" />
+					<div class="raleway">
+						<span>Un mondo pieno di persone interessanti aspetta che li contatti.</span>
+					</div>
+				</div>
+				<div class="w-1/2 px-10">
+					<ContactForm client:only redirectURL={"/thank-you"}/>
+				</div>
+			</div>
 		</div>
 	</main>
 </Layout>
+<style>
+	
+</style>
