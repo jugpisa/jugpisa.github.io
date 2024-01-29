@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+const archive = await Astro.glob('../Archive/*.md');
+---
+
+<Layout title="JUG (JVM User Group) - Pisa">
+	<main>
+		<div class="flex-col sm:flex-row flex justify-center">
+            <div class="raleway px-20">
+                <div class="text-lg">Archivio</div>
+                <ul>
+                    {/*TODO: capire come far apparire post archivio */}
+                    {archive.map(post => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+                </ul>
+            </div>
+		</div>
+	</main>
+</Layout>
+<style>
+</style>
