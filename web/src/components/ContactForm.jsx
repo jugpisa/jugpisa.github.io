@@ -115,7 +115,7 @@ export default function ContactForm() {
                             checked={privacyChecked}
                             onChange={e => setPrivacyChecked(!privacyChecked)}
                             disabled={privacyChecked}/>
-                            <div className="text-xs">Ho letto l'<span className="underline text-blue-700"><a href="/privacy">informativa sulla privacy</a></span> ed acconsento al trattamento dei miei dati</div>
+                            <div className="text-xs">Ho letto l'<span className="underline text-blue-700"><a href="/privacy" target='_blank'>informativa sulla privacy</a></span> ed acconsento al trattamento dei miei dati</div>
                         </div>
                     </div>
 
