@@ -1,8 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import ArchiveListItem from "../components/ArchiveListItem";
+import Layout from "../../layouts/Layout.astro";
+import ArchiveListItem from "../../components/ArchiveListItem";
 
-const archive = await Astro.glob('./Archivio/*.mdx');
+var archive = [];
+try{
+    archive = await Astro.glob('./*.mdx');
+} catch (error) {
+    archive = [];
+}
 ---
 
 <Layout title="JUG (JVM User Group) - Pisa">
@@ -13,7 +18,7 @@ const archive = await Astro.glob('./Archivio/*.mdx');
                     <div class="text-4xl font-bold">Archivio</div>
                     <div class="ml-10 mt-6">
                         <ul class="font-light list-image-[url(/icons/calendar.svg)] align-baseline">
-                            {archive.map(post => 
+                            {archive.length > 0 && archive.map(post => 
                                 <ArchiveListItem url={post.url} title={post.frontmatter.title} tags={post.frontmatter.tags} />
                             )}
                         </ul>

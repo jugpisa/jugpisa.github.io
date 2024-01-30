@@ -1,8 +1,8 @@
 ---
-import Events from "../components/EventCalendar";
-import Layout from "../layouts/Layout.astro";
+import Events from "../../components/EventCalendar";
+import Layout from "../../layouts/Layout.astro";
 
-const events = await Astro.glob('./eventi/*.mdx');
+const events = await Astro.glob('./*.mdx');
 ---
 
 <Layout title="JUG (JVM User Group) - Pisa">
