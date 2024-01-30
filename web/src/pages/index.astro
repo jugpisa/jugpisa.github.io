@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import {getSponsor} from '../services/getSponsor.service'
 import HelloJUG from '../components/HelloJUG.astro';
 import Sponsor from '../components/Sponsor.jsx';
+
+const sponsors = getSponsor();
 ---
 
 <Layout title="JUG (JVM User Group) - Pisa">
@@ -13,12 +15,13 @@ import Sponsor from '../components/Sponsor.jsx';
 			</div>
 			<img class="h-auto w-auto" src="/Logo_C2.svg" alt="JVM User Group Pisa">
 		</div>
+		{sponsors.length > 0 && 
 		<div class="hidden sm:block bg-zinc-300 pb-8 pt-4">
 			<div class="text-4xl font-light flex justify-center mb-14 mt-2 raleway">I Nostri Sponsor</div>
 			<div class="hidden sm:flex justify-center px-8 ">
-				<Sponsor sponsors={getSponsor()}/>
+				<Sponsor sponsors={sponsors}/>
 			</div>
-		</div>
+		</div>}
 	</main>
 </Layout>
 <style>
