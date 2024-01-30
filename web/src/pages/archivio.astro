@@ -1,17 +1,32 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const archive = await Astro.glob('../Archive/*.md');
+import ArchiveListItem from "../components/ArchiveListItem";
+
+const archive = await Astro.glob('./Archivio/*.mdx');
 ---
 
 <Layout title="JUG (JVM User Group) - Pisa">
 	<main>
-		<div class="flex-col sm:flex-row flex justify-center">
-            <div class="raleway px-20">
-                <div class="text-lg">Archivio</div>
-                <ul>
-                    {/*TODO: capire come far apparire post archivio */}
-                    {archive.map(post => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
-                </ul>
+		<div class="flex-col sm:flex-row flex justify-center py-10 mx-20">
+            <div class="raleway flex flex-row justify-center md:w-1/2">
+                <div class="flex-1 px-20">
+                    <div class="text-4xl font-bold">Archivio</div>
+                    <div class="ml-10 mt-6">
+                        <ul class="font-light list-image-[url(/icons/calendar.svg)] align-baseline">
+                            {archive.map(post => 
+                                <ArchiveListItem url={post.url} title={post.frontmatter.title} tags={post.frontmatter.tags} />
+                            )}
+                        </ul>
+                    </div>
+                </div>
+                <div class="inline-block h-[250px] min-h-[1em] w-0.5 self-stretch bg-black opacity-100 dark:opacity-50"></div>
+                <div class="px-4">
+                    <div class="text-sm font-semibold">Legenda</div>
+                    <ul class="ml-6 text-xs mt-2">
+                        <li class="list-image-[url(/icons/calendar.svg)]">Meeting</li>
+                        <li class="list-image-[url(/icons/filetext.svg)]">Articolo</li>
+                    </ul>
+                </div>
             </div>
 		</div>
 	</main>

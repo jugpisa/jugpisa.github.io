@@ -1,0 +1,40 @@
+---
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+
+const {frontmatter} = Astro.props;
+---
+
+<html lang="en" class="bg-slate-100">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="JVM User Group Pisa" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/Logo_C2.svg" />
+		<!-- google fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;500&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;500;800;900&display=swap" rel="stylesheet">
+		<meta name="generator" content={Astro.generator} />
+		<title>{frontmatter.title}</title>
+	</head>
+	<body>
+        <Navbar />
+        <main>
+            <div class="flex-col sm:flex-row flex justify-center py-10">
+                <div>
+                    <!-- ... -->
+                    <div class="text-4xl font-semibold">{frontmatter.title}</div>
+                    <p class="text-sm pb-6">{frontmatter.description}</p>
+                    <slot /> <!-- Markdown content is injected here -->
+                    <!-- ... -->
+                    <div class="text-xs mt-10"><span class="font-bold">{frontmatter.date}</span> | Post a cura di: {frontmatter.author??"Autore Anonimo"}</div>
+                </div>
+            </div>
+        </main>
+	</body>
+	<Footer />
+</html>

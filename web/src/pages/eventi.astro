@@ -1,0 +1,26 @@
+---
+import Events from "../components/EventCalendar";
+import Layout from "../layouts/Layout.astro";
+
+const events = await Astro.glob('./eventi/*.mdx');
+---
+
+<Layout title="JUG (JVM User Group) - Pisa">
+	<main class="flex justify-center">
+		<div class="px-10 mt-10 w-1/2">
+            <div class="bg-white min-w-screen rounded-lg pb-12 pt-8 px-10 drop-shadow-xl raleway">
+                <Events client:only events={events}/>
+            </div>
+        </div>
+	</main>
+</Layout>
+<style>
+:root{
+    --fc-button-border-color: rgb(96 165 250);
+    --fc-button-bg-color: rgb(96 165 250);
+    --fc-button-hover-border-color: rgb(236 72 153);
+    --fc-button-hover-bg-color: rgb(236 72 153);
+    --fc-button-active-border-color: rgb(131 24 67);
+    --fc-button-active-bg-color: rgb(131 24 67);
+}
+</style>
