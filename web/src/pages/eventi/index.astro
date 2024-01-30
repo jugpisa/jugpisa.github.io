@@ -7,7 +7,7 @@ const events = await Astro.glob('./*.mdx');
 
 <Layout title="JUG (JVM User Group) - Pisa">
 	<main class="flex justify-center">
-		<div class="px-10 mt-10 w-1/2">
+		<div class="px-10 mt-10 sm:w-1/2">
             <div class="bg-white min-w-screen rounded-lg pb-12 pt-8 px-10 drop-shadow-xl raleway">
                 <Events client:only events={events}/>
             </div>

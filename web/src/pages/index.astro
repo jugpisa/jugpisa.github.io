@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import {getSponsor} from '../services/getSponsor.service'
 import HelloJUG from '../components/HelloJUG.astro';
 import Sponsor from '../components/Sponsor.jsx';
+import TelegramButton from '../components/TelegramButton';
 
 const sponsors = getSponsor();
 ---
@@ -13,7 +14,14 @@ const sponsors = getSponsor();
 			<div class="hidden code sm:self-center sm:block">
 				<HelloJUG/>
 			</div>
-			<img class="h-auto w-auto" src="/Logo_C2.svg" alt="JVM User Group Pisa">
+			<img class="h-1/2 w-1/2 self-center sm:h-auto sm:w-auto" src="/Logo_C2.svg" alt="JVM User Group Pisa">
+			<div class="flex justify-center gap-x-6 sm:hidden">
+				<TelegramButton url="https://t.me/+wrUzq3_e-oljNzY0" title="Annunci"/>
+				<TelegramButton url="https://t.me/+gO5siBQM-GlkZTM0" title="Chat"/>
+			</div>
+			<div class="flex justify-center sm:hidden">
+				<span class="text-xs">Per una migliore esperienza accedi da un PC</span>
+			</div>
 		</div>
 		{sponsors.length > 0 && 
 		<div class="hidden sm:block bg-zinc-300 pb-8 pt-4">

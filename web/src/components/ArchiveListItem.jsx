@@ -11,8 +11,8 @@ const ArchiveListItem = ({url, title, tags}) => {
         <li className={`${getIcon(tags)} ${isItemHidden(tags)}`}>
             <div className="flex flex-1 gap-x-2 align-baseline">
                 <a href={url}>{title}</a>
-                <span className="sm:hidden md:block">-</span>
-                <div className="sm:hidden md:flex md:flex-row">
+                <span className="hidden sm:block">-</span>
+                <div className="hidden sm:flex sm:flex-row">
                     <span className="pr-2 font-medium">tags:</span>
                     <div className="flex flex-row gap-x-1">
                         {tags.map(tag => <span className="bg-zinc-500 text-neutral-200 font-medium py-1 px-2 rounded-md text-xs align-baseline">{tag}</span>)}
