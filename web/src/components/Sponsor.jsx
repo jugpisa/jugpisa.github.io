@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 
 const getGridSize = (numberOfElements) => {
     if(numberOfElements > 2 && numberOfElements % 4 == 0) return 4;
