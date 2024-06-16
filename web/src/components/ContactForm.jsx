@@ -8,7 +8,7 @@ export default function ContactForm() {
     const [privacyChecked, setPrivacyChecked] = useState(false);
     const [name, setName] = useState("")
     const [emailIsValid, setEmailIsValid] = useState(false);
-    const _target = {url: "https://nocodeform.io/f/65aee88fecf440303633f6d8", method: "POST"};
+    const _target = {url: "https://nocodeform.io/f/666f158953ee780cc0a96020", method: "POST"};
 
     const checkEmail = (value) => {
         setEmailIsValid(emailRegEx.test(value));
